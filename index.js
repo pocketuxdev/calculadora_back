@@ -9,7 +9,11 @@ app.use(urlencoded({extended: true}));
 app.use(json());
 app.use(cors());
 
-app.use('/v1/calculadora', router);
+app.get('/', async (req, res) => {
+    res.send("BAckend de la calculadora en vivo");
+  }); 
+
+  app.use('/v1/calculadora', router);
 
 app.listen(3500, ()=>{
     console.log("Listening at port 3500");
